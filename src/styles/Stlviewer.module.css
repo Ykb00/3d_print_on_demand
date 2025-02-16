@@ -1,0 +1,171 @@
+/* Container */
+.container {
+  @apply mx-auto px-4 py-8;
+  max-width: 1200px; /* Or use a responsive max width */
+}
+
+/* Dropzone Styles */
+.dropzoneContainer {
+  @apply md:w-[1000px] mx-auto mb-8 flex items-center justify-center;
+  /* Instead of a fixed width, we use full width and a max-width */
+  max-width: 600px;
+}
+
+.dropzoneArea {
+  @apply border-2 border-dashed border-blue-400 rounded-xl bg-blue-50 p-8 cursor-pointer transition-colors;
+  /* Use a responsive margin-top */
+  /* margin-top: -30px; */
+}
+
+.dropzoneArea:hover {
+  @apply bg-blue-50;
+}
+
+.dropzoneContent {
+  @apply flex flex-col items-center space-y-4;
+}
+
+.uploadIcon {
+  @apply w-12 h-12 text-blue-500;
+}
+
+.dropzoneText {
+  @apply text-gray-600 text-center;
+}
+
+/* Animation Container */
+.animationContainer {
+  @apply flex justify-center;
+}
+
+.loadingAnimation {
+  @apply w-48 h-48; /* 200px equivalent; adjust as needed */
+}
+
+.printerAnimation {
+  @apply w-96 h-96 mt-[-90px] mb-[50px] lg:mb-[10px];
+}
+
+.uploadingAnimation {
+  @apply w-[120px] h-[120px]; /* About 120px */
+}
+
+/* 3D Viewer Layout */
+.viewerLayout {
+  @apply flex flex-col lg:flex-row gap-8 items-center justify-center lg:w-full ;
+}
+
+/* ThreeDPreview for the dynamic Three.js component */
+.threeDPreview {
+  @apply rounded-lg bg-gray-100 flex items-center justify-center  ;
+  width: 100%;
+  /* On desktop, use a larger size; on mobile, limit the height */
+  height: 600px;
+}
+
+@media (max-width: 1024px) {
+  .threeDPreview {
+    height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .threeDPreview {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+/* Pricing Panel */
+.pricingPanel {
+  @apply bg-white rounded-xl shadow-lg p-6 space-y-6;
+  width: 100%;
+  max-width: 350px;
+}
+
+.pricingTitle {
+  @apply text-xl font-bold text-gray-800;
+}
+
+.optionsContainer {
+  @apply space-y-4;
+}
+
+.optionGroup {
+  @apply space-y-2;
+}
+
+.optionLabel {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.buttonGrid {
+  @apply grid gap-2;
+}
+
+.buttonGrid.twoColumns {
+  @apply grid-cols-2;
+}
+
+.buttonGrid.threeColumns {
+  @apply grid-cols-3;
+}
+
+.optionButton {
+  @apply px-3 py-2 text-sm rounded-lg transition-colors;
+}
+
+.optionButton.selected {
+  @apply bg-blue-500 text-white;
+}
+
+.optionButton.unselected {
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-800;
+}
+
+/* Pricing Footer */
+.pricingFooter {
+  @apply pt-4 border-t;
+}
+
+.totalPrice {
+  @apply text-lg font-medium text-gray-900;
+}
+
+.paymentButton {
+  @apply w-full mt-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors;
+}
+
+/* Carousel Margins */
+.carouselDefault {
+  @apply mt-[-90px];
+}
+
+.carouselActive {
+  margin-top: 30px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+  .viewerLayout {
+    @apply flex-col items-center;
+  }
+}
+
+@media (max-width: 640px) {
+  .dropzoneArea {
+    @apply p-4;
+  }
+  
+  .printerAnimation {
+    @apply w-full h-[250px] mt-[-50px];
+  }
+  
+  .carouselDefault {
+    @apply mt-[-90px];
+  }
+  
+  .carouselActive {
+    margin-top: 30px;
+  }
+}
